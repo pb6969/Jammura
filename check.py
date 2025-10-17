@@ -126,13 +126,7 @@ if trend != 'sideways':
                 elif trend == "downtrend":
                     Bullish.append(ticker.upper())
             else:
-                if close[-1] - open_[-1] > max(high[-1]-close[-1], open_[-1]-low[-1]):
-                    if trend == "uptrend":
-                        Bullish.append(ticker.upper())
-                    elif trend == "downtrend":
-                        Bullish.append(ticker.upper())
-                else:
-                    Sideways.append(ticker.upper())
+                Sideways.append(ticker.upper())
 
         else: 
             if high[-1] - open_[-1] > close[-1] - low[-1]:
@@ -158,15 +152,7 @@ if trend != 'sideways':
                     elif trend == "downtrend":
                         Bullish.append(ticker.upper())
             else:
-                if open_[-1] - close[-1] > max(high[-1]-open_[-1], close[-1]-low[-1]):
-                    if trend == "downtrend":
-                        Bearish.append(ticker.upper())
-                    elif trend == "uptrend":
-                        Bearish.append(ticker.upper())
-                else:
-                    Sideways.append(ticker.upper())
-else:
-    Sideways.append(ticker.upper())
+                Sideways.append(ticker.upper())
 
 
 
@@ -176,3 +162,4 @@ elif Bearish:
     print(f"{ticker.upper()} Will be Bearish")
 elif Sideways:
     print(f"{ticker.upper()} Will be Sideways. So do not BUY it")
+
